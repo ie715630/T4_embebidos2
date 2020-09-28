@@ -34,12 +34,17 @@ void ten_ms_handler(void)
 	if (100 == tens_of_ms) {
 		tens_of_ms= 0;
         increment_seconds();
-        PRINTF("\e[1;1H\e[2J");
-        PRINTF("Hour: %d:%d:%d\r\n", g_time.hours, g_time.minutes,  g_time.seconds);
-        if(TRUE == check_alarm())
-        {
-        	PRINTF("ALARM\n");
-        }
+        print_time();
+    }
+}
+
+void print_time(void)
+{
+    PRINTF("\e[1;1H\e[2J");
+    PRINTF("Hour: %02d:%02d:%02d\r\n", g_time.hours, g_time.minutes,  g_time.seconds);
+    if(TRUE == check_alarm())
+    {
+    	PRINTF("ALARM\n");
     }
 }
 
