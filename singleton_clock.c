@@ -35,10 +35,10 @@ void ten_ms_handler(void)
 		tens_of_ms= 0;
         increment_seconds();
         PRINTF("\e[1;1H\e[2J");
-        PRINTF("Hour %d:%d\r\n", g_time.minutes,  g_time.seconds);
+        PRINTF("Hour: %d:%d:%d\r\n", g_time.hours, g_time.minutes,  g_time.seconds);
         if(TRUE == check_alarm())
         {
-        	PRINTF("ALARMA\n");
+        	PRINTF("ALARM\n");
         }
     }
 }
