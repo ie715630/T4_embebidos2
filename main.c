@@ -33,8 +33,16 @@ int main(void) {
                     SysTick_CTRL_ENABLE_Msk;
 
     uint8_t inital_secs = 55;
-    uint8_t inita_min = 59;
-    my_time_t initial_time = {inital_secs, inita_min};
+    uint8_t inital_min = 59;
+    uint8_t initial_hour = 11;
+    my_time_t initial_time = {inital_secs, inital_min, initial_hour};
+
+    uint8_t alarm_sec = 10;
+    uint8_t alarm_min = 0;
+    uint8_t alarm_hour = 12;
+    my_time_t alarm_time = {alarm_sec, alarm_min, alarm_hour};
+
+    set_alarm(alarm_time);
 
     set_time(initial_time);
     reload_systick();
