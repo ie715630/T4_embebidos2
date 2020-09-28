@@ -41,5 +41,6 @@ void set_minutes(uint8_t min);
 void set_hours(uint8_t hour);
 
 bool_t check_alarm(void);
+void print_time(void);
 
 #endif /* SINGLETON_CLOCK_H_ */
